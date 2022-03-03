@@ -265,10 +265,12 @@
 
 .dark {
   background-color: #242527;
+  width: 100%;
   @extend .Header;
-
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   .Header {
     width: 100%;
     border-bottom: 1px solid rgb(82, 80, 80);
@@ -350,40 +352,18 @@
   .image {
     width: 100%;
   }
-  // .loading {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
 }
 @media screen and (max-width: 750px) {
   .dark {
     width: 100%;
     position: absolute;
     top: 0;
-    .Header {
-      margin-top: 10px;
-      @include flexCenter(center, column);
-      .logo-InputSection-mode {
-        width: 100%;
-        @include flexCenter(space-around, column);
-        padding-top: 0;
-        .logo {
-          width: 90%;
-          margin-bottom: 10px;
-          h1 {
-            width: 90%;
-            margin: 0 auto;
-          }
-        }
-        .inputSection {
-          margin-bottom: 10px;
-          input {
-            padding: 0.5rem 0.8rem;
-            border-radius: 19px;
-          }
-        }
-      }
+    .all {
+      width: 90%;
     }
+    .news {
+      width: 90%;
+    }
+    @extend .Header;
   }
 }

@@ -296,8 +296,11 @@
 
 .dark {
   background-color: #242527;
+  width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
 }
 .dark .Header, .dark .light, .dark .dark {
   width: 100%;
@@ -361,11 +364,6 @@
 .dark .image {
   width: 100%;
 }
-.dark .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 @media screen and (max-width: 750px) {
   .dark {
@@ -373,36 +371,10 @@
     position: absolute;
     top: 0;
   }
-  .dark .Header, .dark .light, .dark .dark {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  .dark .Header .logo-InputSection-mode, .dark .light .logo-InputSection-mode, .dark .dark .logo-InputSection-mode {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-top: 0;
-  }
-  .dark .Header .logo-InputSection-mode .logo, .dark .light .logo-InputSection-mode .logo, .dark .dark .logo-InputSection-mode .logo {
+  .dark .all {
     width: 90%;
-    margin-bottom: 10px;
   }
-  .dark .Header .logo-InputSection-mode .logo h1, .dark .light .logo-InputSection-mode .logo h1, .dark .dark .logo-InputSection-mode .logo h1 {
+  .dark .news {
     width: 90%;
-    margin: 0 auto;
-  }
-  .dark .Header .logo-InputSection-mode .inputSection, .dark .light .logo-InputSection-mode .inputSection, .dark .dark .logo-InputSection-mode .inputSection {
-    margin-bottom: 10px;
-  }
-  .dark .Header .logo-InputSection-mode .inputSection input, .dark .light .logo-InputSection-mode .inputSection input, .dark .dark .logo-InputSection-mode .inputSection input {
-    padding: 0.5rem 0.8rem;
-    border-radius: 19px;
   }
 }/*# sourceMappingURL=style.css.map */
