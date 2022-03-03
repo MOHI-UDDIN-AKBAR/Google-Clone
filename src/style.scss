@@ -1,0 +1,389 @@
+* {
+  box-sizing: border-box;
+}
+
+@mixin flexCenter($justify, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}
+
+//style for header
+
+.Header {
+  width: 100%;
+  border-bottom: 0.2px solid grey;
+
+  @include flexCenter(center, column);
+  .logo-InputSection-mode {
+    width: 100%;
+    @include flexCenter(space-around, row);
+    padding: 1rem;
+    .logo {
+      flex-basis: 20%;
+      @include flexCenter(center, row);
+      margin: 0 auto;
+      h1 {
+        color: whitesmoke;
+        margin: 5px auto;
+        margin-right: 0;
+        background-color: rgb(158, 154, 154);
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+    .inputSection {
+      flex-basis: 30%;
+      input {
+        width: 100%;
+        font-size: 20px;
+        padding: 0.7rem 1rem;
+        border: 1px solid grey;
+        // border: none;
+        border-radius: 22px;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+        &::placeholder {
+          color: rgb(114, 113, 113);
+        }
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          box-shadow: 3px 5px 7px 3px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    .mode {
+      flex-basis: 40%;
+      text-align: right;
+      button {
+        width: 60px;
+        text-align: left;
+        border: none;
+        color: gold;
+        border: 2px solid rgb(88, 86, 86);
+        background-color: white;
+        padding: 0.2rem 0.3rem;
+        font-size: 20px;
+        border-radius: 19px;
+      }
+    }
+  }
+  .NavLinks {
+    height: 50px;
+    position: relative;
+    @include flexCenter(center, row);
+    .link {
+      align-items: flex-end;
+      width: fit-content;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 17px;
+    }
+    .active {
+      width: fit-content;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 20px;
+      transform: translateY(-10px);
+      padding-bottom: 1.2rem;
+      border-bottom: 4px solid rgb(80, 80, 189);
+      border-width: 50%;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .Header {
+    @include flexCenter(center, column);
+    .logo-InputSection-mode {
+      width: 100%;
+      @include flexCenter(space-around, column);
+      padding-top: 0;
+      .logo {
+        width: 100%;
+        margin-bottom: 10px;
+        h1 {
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+      .inputSection {
+        margin-bottom: 10px;
+        input {
+          padding: 0.5rem 0.8rem;
+          border-radius: 19px;
+        }
+      }
+    }
+  }
+}
+
+//style for footer
+.footer {
+  width: 100%;
+  text-align: center;
+  font-size: 19px;
+}
+
+// style for all component
+
+.all {
+  width: 60%;
+  @include flexCenter(flex-start, column);
+  align-items: flex-start;
+  margin: 35px auto;
+  .link {
+    margin-bottom: 5px;
+
+    a {
+      text-decoration: none;
+      color: #1f2633;
+      font-size: 19px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .title {
+    margin-bottom: 5px;
+
+    a {
+      text-decoration: none;
+      font-size: 23px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .description {
+    margin-bottom: 5px;
+    p {
+      color: grey;
+      font-size: 19px;
+      margin: 0;
+    }
+  }
+}
+
+//style for news Component
+.news {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  .publisher {
+    margin-bottom: 10px;
+    a {
+      text-decoration: none;
+      color: #1f2633;
+      font-size: 19px;
+      word-wrap: break-word;
+    }
+  }
+
+  .title {
+    margin-bottom: 5px;
+    a {
+      text-decoration: none;
+      font-size: 23px;
+      // color: black;
+      color: rgb(59, 59, 223);
+    }
+  }
+}
+
+// style for image component
+.image {
+  width: 100%;
+  padding: 2rem;
+  @include flexCenter(space-around, row);
+  .info {
+    width: 270px;
+    @include flexCenter(center, column);
+    margin: 10px;
+    a {
+      width: 100%;
+      @include flexCenter(flex-start, column);
+      align-items: flex-start;
+      color: #1f2633;
+      text-decoration: none;
+      word-wrap: break-word;
+      img {
+        width: 270px;
+        height: 270px;
+        object-fit: cover;
+        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1, 1.1);
+        }
+      }
+      span {
+        padding: 0.3rem;
+      }
+    }
+  }
+}
+
+// style for video component
+.Gallery {
+  width: 100%;
+  padding: 2rem;
+  @include flexCenter(space-around, row);
+  .video {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .all {
+    width: 90%;
+  }
+  .news {
+    width: 90%;
+  }
+}
+
+// style for Loading component
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//style for light
+.light {
+  background-color: white;
+  @extend .Header;
+}
+
+.dark {
+  background-color: #242527;
+  @extend .Header;
+
+  position: absolute;
+  top: 0;
+  .Header {
+    width: 100%;
+    border-bottom: 1px solid rgb(82, 80, 80);
+    .logo-InputSection-mode {
+      width: 100%;
+      @include flexCenter(space-around, row);
+      padding: 1rem;
+      .logo {
+        h1 {
+          background-color: #242527;
+        }
+      }
+      .inputSection {
+        input {
+          &:hover {
+            box-shadow: 0px 0px 5px 3px rgba(235, 232, 232, 0.1);
+          }
+        }
+      }
+      .mode {
+        margin-right: 50px;
+        button {
+          text-align: right;
+          border: none;
+        }
+      }
+    }
+    .NavLinks {
+      .link {
+        color: rgb(209, 207, 207);
+      }
+      .active {
+        color: rgb(91, 91, 255);
+        font-size: 25px;
+        font-weight: bold;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid rgb(80, 80, 189);
+      }
+    }
+  }
+  .all {
+    width: 60%;
+    .link {
+      a {
+        color: rgb(180, 180, 180);
+      }
+    }
+    .title {
+      a {
+        color: rgb(140, 140, 224);
+      }
+    }
+    .description {
+      p {
+        color: rgb(165, 165, 165);
+      }
+    }
+  }
+
+  //style for news Component
+  .news {
+    width: 50%;
+    box-shadow: 0 0 3px 2px rgba(250, 249, 249, 0.1) inset;
+    border: 1px solid rgb(128, 128, 128);
+    .publisher {
+      a {
+        color: rgb(148, 147, 147);
+      }
+    }
+
+    .title {
+      a {
+        color: rgb(167, 165, 165);
+      }
+    }
+  }
+
+  // style for image component
+  .image {
+    width: 100%;
+  }
+  // .loading {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
+}
+@media screen and (max-width: 750px) {
+  .dark {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    .Header {
+      margin-top: 10px;
+      @include flexCenter(center, column);
+      .logo-InputSection-mode {
+        width: 100%;
+        @include flexCenter(space-around, column);
+        padding-top: 0;
+        .logo {
+          width: 90%;
+          margin-bottom: 10px;
+          h1 {
+            width: 90%;
+            margin: 0 auto;
+          }
+        }
+        .inputSection {
+          margin-bottom: 10px;
+          input {
+            padding: 0.5rem 0.8rem;
+            border-radius: 19px;
+          }
+        }
+      }
+    }
+  }
+}
